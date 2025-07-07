@@ -3,6 +3,10 @@ import { Authorized } from "./Authorized"
 import { Login } from "../views/Login"
 import { Register } from "../views/Register"
 import { Home } from "../views/Home.jsx"
+import { AllGames } from "./Games/AllGames.jsx"
+import { CreateGame } from "./Games/CreateGame.jsx"
+import { MyGames } from "./Games/MyGames.jsx"
+import { GameDetails } from "./Games/GameDetails.jsx"
 
 export const ApplicationViews = () => {
    
@@ -12,6 +16,10 @@ export const ApplicationViews = () => {
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
                 <Route path="/" element={<Home />} />
+                <Route path="/games" element={<AllGames />} />
+                <Route path="/games:id" element={<GameDetails />} />
+                <Route path="/creategame" element={<CreateGame />} />
+                <Route path="/mygames" element={<MyGames />} />
             </Route>
         </Routes>
     </BrowserRouter>
